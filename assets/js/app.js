@@ -222,7 +222,8 @@ window.btoa = window.btoa || function () {
         $nextStepTabLink.tab("show");
 
         eventData = {
-          event: "wizard" + ((nextStep === 3) ? "Success" : "Step" + nextStep) + "Loaded"
+          event: "wizard" + ((nextStep === 3) ? "Success" : "Step" + nextStep) + "Loaded",
+          formStep: nextStep;
         };
 
         console.log("Pushing to Data Layer: " + JSON.stringify(eventData, null, 2));
@@ -255,6 +256,7 @@ window.btoa = window.btoa || function () {
         });
         eventData = {
           event: "failedValidation",
+          formStep: nextStep-1,
           invalidFields: invalidFieldsMessage
         };
 
