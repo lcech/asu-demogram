@@ -256,7 +256,7 @@ window.btoa = window.btoa || function () {
         });
         eventData = {
           event: "failedValidation",
-          formStep: nextStep-1,
+          formStep: currentStep,
           invalidFields: invalidFieldsMessage
         };
 
