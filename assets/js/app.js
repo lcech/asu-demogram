@@ -370,7 +370,7 @@ function onPlayerStateChange(event) {
   videoData = event.target.getVideoData();
   switch (event.data) {
   case YT.PlayerState.PLAYING:
-    eventData = {event: "videoPlay", video: {id: videoData.video_id, title: videoData.title}};
+    eventData = {event: "videoPlay", video: {id: videoData.video_id, title: videoData.title, timePlayed: event.target.getCurrentTime()}};
     console.log("Pushing to Data Layer: " + JSON.stringify(eventData, null, 2));
     window[window.dataLayerName].push(eventData);
     break;
